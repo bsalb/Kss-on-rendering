@@ -21,11 +21,19 @@ const SSGPage = ({ data }) => {
 export default SSGPage;
 
 export async function getStaticProps() {
-  const data = await fetchData("/api/data");
+  try {
+    const data = await fetchData("/api/data");
 
-  return {
-    props: {
-      data,
-    },
-  };
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
 }

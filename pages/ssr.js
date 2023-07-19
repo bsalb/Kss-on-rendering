@@ -19,13 +19,21 @@ const SSRPage = ({ data }) => {
 };
 
 export async function getServerSideProps() {
-  const data = await fetchData("/api/data");
+  try {
+    const data = await fetchData("/api/data");
 
-  return {
-    props: {
-      data,
-    },
-  };
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
 }
 
 export default SSRPage;

@@ -19,14 +19,22 @@ const ISRPage = ({ data }) => {
 };
 
 export async function getStaticProps() {
-  const data = await fetchData("api/data");
+  try {
+    const data = await fetchData("/api/data");
 
-  return {
-    props: {
-      data,
-    },
-    revalidate: 10, // Revalidate the page every 10 seconds
-  };
+    return {
+      props: {
+        data,
+      },
+      revalidate: 10,
+    };
+  } catch (error) {
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
 }
 
 export default ISRPage;
