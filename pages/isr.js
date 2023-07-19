@@ -1,4 +1,4 @@
-import Card from "@/component/Card";
+import Card from "@/components/Card";
 import { fetchData } from "@/utils/fetch";
 
 const ISRPage = ({ data }) => {

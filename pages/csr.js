@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import Card from "@/component/Card";
+import Card from "@/components/Card";
 import { fetchData } from "@/utils/fetch";
 
 const CSRPage = () => {

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Card = ({ user }) => {
   return (
     <div className="flex justify-center items-center border border-gray-600 rounded-md p-4">
